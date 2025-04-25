@@ -1,0 +1,26 @@
+# postgresql
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: elevate_development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: elevate_test
+
+# Store production database in the storage/ directory, which by default
+# is mounted as a persistent Docker volume in config/deploy.yml.
+production:
+    <<: *default
+    database: elevate_production
+    username: <%= ENV['DATABASE_USERNAME'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+    host: <%= ENV['DATABASE_HOST'] %>
+    port: <%= ENV['DATABASE_PORT'] %>
