@@ -20,6 +20,6 @@ class ApplicationController < ActionController::API
   end
 
   def render_serializer(serializer)
-    render json: serializer.serializable_hash
+    render json: serializer.serializable_hash, status: :ok
   end
 end

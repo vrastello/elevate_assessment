@@ -8,7 +8,8 @@ module Subscription
     ABC_STATUSES = %w[active expired]
 
     def call
-      # instead of fields on user model, would be better to use redis keys that expire
+      # instead of fields on user model, would be better to use redis keys that expire, this is just to prevent
+      # unnecessary calls to the api, we don't need to persist this since we need to check it at least daily.
       return user.abc_subscription_status if user.abc_subscription_synced_at&.after? 1.day.ago
 
       response = client.get_user_status(user.id)
