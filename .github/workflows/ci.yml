@@ -74,6 +74,7 @@ jobs:
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
           PGHOST: postgres
           PGUSER: postgres
+          POSTGRES_HOST_AUTH_METHOD: trust
           PGPORT: ${{ job.services.postgres.ports[5432] }}
           RAILS_ENV: test
         run: |
