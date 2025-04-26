@@ -3,4 +3,10 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_secure_password
+
+  def stats
+    {
+      total_games_played: game_events.count
+    }
+  end
 end

@@ -21,8 +21,10 @@ gem "jwt"
 gem "bcrypt"
 # use cors in case we want to build a web app UI
 gem "rack-cors"
-# for seeding data
+# for seeding data/testing
 gem "faker"
+# for serialized data
+gem 'jsonapi-serializer'
 
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_cache"

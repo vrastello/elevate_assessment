@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   namespace :api do
+    get "user", to: "users#show"
     post "user", to: "users#create"
     post "user/game_events", to: "game_events#create"
     post "sessions", to: "sessions#login"
