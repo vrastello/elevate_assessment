@@ -3,5 +3,5 @@ class GameEvent < ApplicationRecord
 
   ALLOWED_EVENT_TYPES = %w[COMPLETED].freeze
 
-  validates :event_type, inclusion: { in: ALLOWED_EVENT_TYPES, message: "%{value} is not a valid type" }
+  validates :event_type, inclusion: { in: ALLOWED_EVENT_TYPES }
 end
