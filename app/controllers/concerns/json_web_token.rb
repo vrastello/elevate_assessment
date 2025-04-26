@@ -4,7 +4,7 @@ require "jwt"
 
 module JsonWebToken
   extend ActiveSupport::Concern
-  HMAC_SECRET = Rails.application.secrets.secret_key_base
+  HMAC_SECRET = Rails.application.credentials.secret_key_base
   JWT_ALGORITHM = "HS256"
 
   def jwt_encode(payload, exp = 24.hours.from_now)

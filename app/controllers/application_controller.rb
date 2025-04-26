@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
 
   def authenticate_request
     find_user_with_token
-  rescue Standard::Error => e
+  rescue StandardError => e
     # any error here means token is invalid
     render json: { error: e.message }, status: :unauthorized
   end
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::API
     @current_user = User.find(decoded[:user_id])
   end
 
-  def render_serializer(serializer)
-    render json: serializer.serializable_hash, status: :ok
+  def render_serializer(serializer, root: nil)
+    render json: serializer.serialize_with_root(root:), status: :ok
   end
 end

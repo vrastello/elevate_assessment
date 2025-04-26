@@ -1,13 +1,8 @@
-class UserSerializer
-  include JSONAPI::Serializer
+class UserSerializer < BaseJsonSerializer
 
   attributes :id, :email
 
-  attribute :stats do |obj|
-    obj.stats
-  end
+  attribute :stats, &:stats
 
-  attribute :subscription_status do |obj|
-    obj.abc_subscription
-  end
+  attribute :subscription_status, &:abc_subscription
 end

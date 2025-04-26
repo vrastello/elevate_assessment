@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    render_serializer UserSerializer.new(@current_user)
+    render_serializer UserSerializer.new(@current_user), root: :user
   end
 
   private
