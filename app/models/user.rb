@@ -9,4 +9,8 @@ class User < ApplicationRecord
       total_games_played: game_events.count
     }
   end
+
+  def abc_subscription
+    Subscription::AbcStatusService.call(user: self)
+  end
 end

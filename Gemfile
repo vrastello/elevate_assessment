@@ -25,6 +25,12 @@ gem "rack-cors"
 gem "faker"
 # for serialized data
 gem 'jsonapi-serializer'
+# for third party api calls
+gem "httparty"
+# for redis
+gem "redis"
+
+# Use JavaScript with ESM import maps [
 
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_cache"
