@@ -13,7 +13,7 @@ class ApplicationController < ActionController::API
   end
 
   def find_user_with_token
-    header = request.headers['Authorization']
+    header = request.headers["Authorization"]
     header = header.split(" ").last if header
     decoded = jwt_decode(header)
     @current_user = User.find(decoded[:user_id])

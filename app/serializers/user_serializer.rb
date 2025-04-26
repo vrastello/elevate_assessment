@@ -1,5 +1,4 @@
 class UserSerializer < BaseJsonSerializer
-
   attributes :id, :email
 
   attribute :stats, &:stats

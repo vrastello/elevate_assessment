@@ -24,7 +24,7 @@ gem "rack-cors"
 # for seeding data/testing
 gem "faker"
 # for serialized data
-gem 'jsonapi-serializer'
+gem "jsonapi-serializer"
 # for third party api calls
 gem "httparty"
 # for redis

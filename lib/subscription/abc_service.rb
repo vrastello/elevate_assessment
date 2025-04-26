@@ -6,5 +6,3 @@ module Subscription
     end
   end
 end
-
-
