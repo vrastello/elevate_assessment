@@ -17,6 +17,8 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 # use jwt for authentication
 gem "jwt"
+# use bcrypt for password hashing
+gem "bcrypt"
 # use cors in case we want to build a web app UI
 gem "rack-cors"
 # for seeding data

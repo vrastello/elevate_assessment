@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     post "user", to: "users#create"
+    post "user/game_events", to: "game_events#create"
     post "sessions", to: "sessions#login"
   end
 end
