@@ -12,7 +12,6 @@ class Api::GameEventsController < ApplicationController
   private
 
   def game_event_params
-    puts params.inspect
     # we cannot/don't want to use 'type' as db field due to ruby using type already for its own purposes
     params.require(:game_event).permit(:game_name, :type, :occured_at).tap do |whitelisted|
       whitelisted[:event_type] = whitelisted.delete(:type) if whitelisted[:type]
